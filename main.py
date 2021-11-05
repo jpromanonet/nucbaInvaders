@@ -40,3 +40,24 @@ class Laser:
 
     def draw(self, window):
         window.blit(self.img, (self.x, self.y))
+    
+    def move(self, vel):
+        self.y += vel
+    
+    def off_screen(self, height):
+        return not(self.y <= height and self.y >= 0)
+    
+    def collision(self, obj):
+        return collide(self, obj)
+
+## The player ship
+
+class Ship:
+    COOLDOWN = 30
+
+    def __init__(self, x, y, health=100):
+        self.x = x
+        self.y = y
+        self.health = health
+        self.ship_img = None
+        
