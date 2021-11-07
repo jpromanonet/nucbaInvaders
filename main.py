@@ -69,4 +69,5 @@ class Ship:
         for laser in self.lasers:
             laser.draw(window)
 
-    def move_lasers(self)
+    def move_lasers(self):
+        
